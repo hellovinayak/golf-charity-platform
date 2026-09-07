@@ -1,0 +1,334 @@
+State,Year,SDG,Forecast_Score,CI_Lower_95,CI_Upper_95,Annual_Growth_Rate,Trend
+Andhra Pradesh,2024,SDG3_Health,81.2,71.0,91.4,1.58,Improving
+Andhra Pradesh,2025,SDG3_Health,82.8,71.4,94.2,1.58,Improving
+Andhra Pradesh,2026,SDG3_Health,84.4,71.6,97.1,1.58,Improving
+Andhra Pradesh,2024,SDG4_Education,51.2,47.7,54.7,-0.04,Stagnant
+Andhra Pradesh,2025,SDG4_Education,51.2,47.2,55.1,-0.04,Stagnant
+Andhra Pradesh,2026,SDG4_Education,51.1,46.7,55.5,-0.04,Stagnant
+Andhra Pradesh,2024,SDG13_Climate,70.0,70.0,70.0,0.0,Stagnant
+Andhra Pradesh,2025,SDG13_Climate,70.0,70.0,70.0,0.0,Stagnant
+Andhra Pradesh,2026,SDG13_Climate,70.0,70.0,70.0,0.0,Stagnant
+Arunachal Pradesh,2024,SDG3_Health,80.9,59.2,100.0,6.17,Improving
+Arunachal Pradesh,2025,SDG3_Health,87.1,62.9,100.0,6.17,Improving
+Arunachal Pradesh,2026,SDG3_Health,93.3,66.3,100.0,6.17,Improving
+Arunachal Pradesh,2024,SDG4_Education,44.8,18.0,71.6,-1.58,Declining
+Arunachal Pradesh,2025,SDG4_Education,43.2,13.3,73.1,-1.58,Declining
+Arunachal Pradesh,2026,SDG4_Education,41.6,8.3,75.0,-1.58,Declining
+Arunachal Pradesh,2024,SDG13_Climate,82.0,31.6,100.0,9.86,Improving
+Arunachal Pradesh,2025,SDG13_Climate,91.9,35.6,100.0,9.86,Improving
+Arunachal Pradesh,2026,SDG13_Climate,100.0,38.9,100.0,9.86,Improving
+Assam,2024,SDG3_Health,71.7,43.8,99.7,5.64,Improving
+Assam,2025,SDG3_Health,77.4,46.2,100.0,5.64,Improving
+Assam,2026,SDG3_Health,83.0,48.2,100.0,5.64,Improving
+Assam,2024,SDG4_Education,40.4,39.5,41.3,-0.65,Declining
+Assam,2025,SDG4_Education,39.8,38.8,40.7,-0.65,Declining
+Assam,2026,SDG4_Education,39.1,38.0,40.2,-0.65,Declining
+Assam,2024,SDG13_Climate,67.8,46.5,89.1,4.11,Improving
+Assam,2025,SDG13_Climate,71.9,48.1,95.7,4.11,Improving
+Assam,2026,SDG13_Climate,76.0,49.5,100.0,4.11,Improving
+Bihar,2024,SDG3_Health,78.7,50.7,100.0,5.81,Improving
+Bihar,2025,SDG3_Health,84.5,53.2,100.0,5.81,Improving
+Bihar,2026,SDG3_Health,90.3,55.4,100.0,5.81,Improving
+Bihar,2024,SDG4_Education,36.9,26.0,47.7,2.91,Improving
+Bihar,2025,SDG4_Education,39.8,27.7,51.9,2.91,Improving
+Bihar,2026,SDG4_Education,42.7,29.2,56.2,2.91,Improving
+Bihar,2024,SDG13_Climate,27.4,11.4,43.4,-3.09,Declining
+Bihar,2025,SDG13_Climate,24.3,6.5,42.1,-3.09,Declining
+Bihar,2026,SDG13_Climate,21.2,1.3,41.1,-3.09,Declining
+Chhattisgarh,2024,SDG3_Health,62.8,42.2,83.4,2.42,Improving
+Chhattisgarh,2025,SDG3_Health,65.2,42.2,88.2,2.42,Improving
+Chhattisgarh,2026,SDG3_Health,67.6,42.0,93.3,2.42,Improving
+Chhattisgarh,2024,SDG4_Education,64.9,61.5,68.3,2.36,Improving
+Chhattisgarh,2025,SDG4_Education,67.3,63.5,71.1,2.36,Improving
+Chhattisgarh,2026,SDG4_Education,69.6,65.4,73.9,2.36,Improving
+Chhattisgarh,2024,SDG13_Climate,60.2,28.2,92.2,6.17,Improving
+Chhattisgarh,2025,SDG13_Climate,66.4,30.7,100.0,6.17,Improving
+Chhattisgarh,2026,SDG13_Climate,72.5,32.7,100.0,6.17,Improving
+Goa,2024,SDG3_Health,83.4,69.8,97.0,3.5,Improving
+Goa,2025,SDG3_Health,86.9,71.8,100.0,3.5,Improving
+Goa,2026,SDG3_Health,90.4,73.5,100.0,3.5,Improving
+Goa,2024,SDG4_Education,72.1,71.4,72.8,0.21,Stagnant
+Goa,2025,SDG4_Education,72.3,71.5,73.1,0.21,Stagnant
+Goa,2026,SDG4_Education,72.5,71.6,73.4,0.21,Stagnant
+Goa,2024,SDG13_Climate,63.5,40.5,86.6,4.46,Improving
+Goa,2025,SDG13_Climate,68.0,42.2,93.7,4.46,Improving
+Goa,2026,SDG13_Climate,72.4,43.7,100.0,4.46,Improving
+Gujarat,2024,SDG3_Health,100.0,73.2,100.0,7.33,Improving
+Gujarat,2025,SDG3_Health,100.0,77.0,100.0,7.33,Improving
+Gujarat,2026,SDG3_Health,100.0,80.3,100.0,7.33,Improving
+Gujarat,2024,SDG4_Education,60.7,56.7,64.8,2.4,Improving
+Gujarat,2025,SDG4_Education,63.1,58.6,67.6,2.4,Improving
+Gujarat,2026,SDG4_Education,65.5,60.5,70.6,2.4,Improving
+Gujarat,2024,SDG13_Climate,82.1,62.5,100.0,3.77,Improving
+Gujarat,2025,SDG13_Climate,85.8,64.0,100.0,3.77,Improving
+Gujarat,2026,SDG13_Climate,89.6,65.3,100.0,3.77,Improving
+Haryana,2024,SDG3_Health,79.0,64.8,93.2,2.95,Improving
+Haryana,2025,SDG3_Health,82.0,66.1,97.8,2.95,Improving
+Haryana,2026,SDG3_Health,84.9,67.2,100.0,2.95,Improving
+Haryana,2024,SDG4_Education,76.0,63.3,88.7,1.81,Improving
+Haryana,2025,SDG4_Education,77.8,63.6,92.0,1.81,Improving
+Haryana,2026,SDG4_Education,79.6,63.8,95.5,1.81,Improving
+Haryana,2024,SDG13_Climate,79.1,32.9,100.0,8.91,Improving
+Haryana,2025,SDG13_Climate,88.0,36.5,100.0,8.91,Improving
+Haryana,2026,SDG13_Climate,96.9,39.4,100.0,8.91,Improving
+Himachal Pradesh,2024,SDG3_Health,90.1,77.0,100.0,4.27,Improving
+Himachal Pradesh,2025,SDG3_Health,94.4,79.8,100.0,4.27,Improving
+Himachal Pradesh,2026,SDG3_Health,98.7,82.3,100.0,4.27,Improving
+Himachal Pradesh,2024,SDG4_Education,73.9,63.8,84.1,-0.97,Declining
+Himachal Pradesh,2025,SDG4_Education,73.0,61.6,84.3,-0.97,Declining
+Himachal Pradesh,2026,SDG4_Education,72.0,59.3,84.7,-0.97,Declining
+Himachal Pradesh,2024,SDG13_Climate,62.7,61.0,64.5,0.34,Improving
+Himachal Pradesh,2025,SDG13_Climate,63.1,61.1,65.1,0.34,Improving
+Himachal Pradesh,2026,SDG13_Climate,63.4,61.2,65.6,0.34,Improving
+Jharkhand,2024,SDG3_Health,91.1,59.5,100.0,7.11,Improving
+Jharkhand,2025,SDG3_Health,98.2,63.0,100.0,7.11,Improving
+Jharkhand,2026,SDG3_Health,100.0,66.0,100.0,7.11,Improving
+Jharkhand,2024,SDG4_Education,63.5,55.4,71.6,4.04,Improving
+Jharkhand,2025,SDG4_Education,67.5,58.5,76.6,4.04,Improving
+Jharkhand,2026,SDG4_Education,71.6,61.5,81.7,4.04,Improving
+Jharkhand,2024,SDG13_Climate,32.2,26.9,37.5,1.03,Improving
+Jharkhand,2025,SDG13_Climate,33.2,27.3,39.2,1.03,Improving
+Jharkhand,2026,SDG13_Climate,34.3,27.6,40.9,1.03,Improving
+Karnataka,2024,SDG3_Health,83.9,76.1,91.7,2.22,Improving
+Karnataka,2025,SDG3_Health,86.1,77.4,94.9,2.22,Improving
+Karnataka,2026,SDG3_Health,88.4,78.6,98.1,2.22,Improving
+Karnataka,2024,SDG4_Education,61.5,58.3,64.7,-0.9,Declining
+Karnataka,2025,SDG4_Education,60.6,57.1,64.2,-0.9,Declining
+Karnataka,2026,SDG4_Education,59.7,55.8,63.7,-0.9,Declining
+Karnataka,2024,SDG13_Climate,74.5,70.9,78.0,0.69,Improving
+Karnataka,2025,SDG13_Climate,75.2,71.2,79.1,0.69,Improving
+Karnataka,2026,SDG13_Climate,75.8,71.4,80.3,0.69,Improving
+Kerala,2024,SDG3_Health,72.5,47.5,97.5,-2.04,Declining
+Kerala,2025,SDG3_Health,70.5,42.6,98.4,-2.04,Declining
+Kerala,2026,SDG3_Health,68.4,37.3,99.6,-2.04,Declining
+Kerala,2024,SDG4_Education,84.9,78.5,91.4,1.79,Improving
+Kerala,2025,SDG4_Education,86.7,79.5,93.9,1.79,Improving
+Kerala,2026,SDG4_Education,88.5,80.5,96.5,1.79,Improving
+Kerala,2024,SDG13_Climate,97.6,55.0,100.0,8.23,Improving
+Kerala,2025,SDG13_Climate,100.0,58.3,100.0,8.23,Improving
+Kerala,2026,SDG13_Climate,100.0,61.0,100.0,8.23,Improving
+Madhya Pradesh,2024,SDG3_Health,65.2,37.5,92.9,3.2,Improving
+Madhya Pradesh,2025,SDG3_Health,68.4,37.5,99.3,3.2,Improving
+Madhya Pradesh,2026,SDG3_Health,71.6,37.1,100.0,3.2,Improving
+Madhya Pradesh,2024,SDG4_Education,45.1,31.9,58.3,-1.22,Declining
+Madhya Pradesh,2025,SDG4_Education,43.9,29.1,58.6,-1.22,Declining
+Madhya Pradesh,2026,SDG4_Education,42.6,26.2,59.1,-1.22,Declining
+Madhya Pradesh,2024,SDG13_Climate,74.7,46.3,100.0,5.49,Improving
+Madhya Pradesh,2025,SDG13_Climate,80.2,48.5,100.0,5.49,Improving
+Madhya Pradesh,2026,SDG13_Climate,85.7,50.3,100.0,5.49,Improving
+Maharashtra,2024,SDG3_Health,92.7,69.0,100.0,4.1,Improving
+Maharashtra,2025,SDG3_Health,96.8,70.4,100.0,4.1,Improving
+Maharashtra,2026,SDG3_Health,100.0,71.4,100.0,4.1,Improving
+Maharashtra,2024,SDG4_Education,66.7,63.7,69.8,0.4,Improving
+Maharashtra,2025,SDG4_Education,67.1,63.8,70.5,0.4,Improving
+Maharashtra,2026,SDG4_Education,67.5,63.8,71.3,0.4,Improving
+Maharashtra,2024,SDG13_Climate,89.9,49.0,100.0,7.89,Improving
+Maharashtra,2025,SDG13_Climate,97.8,52.2,100.0,7.89,Improving
+Maharashtra,2026,SDG13_Climate,100.0,54.8,100.0,7.89,Improving
+Manipur,2024,SDG3_Health,76.6,66.9,86.3,2.13,Improving
+Manipur,2025,SDG3_Health,78.7,67.9,89.6,2.13,Improving
+Manipur,2026,SDG3_Health,80.9,68.8,92.9,2.13,Improving
+Manipur,2024,SDG4_Education,61.9,52.2,71.5,-1.18,Declining
+Manipur,2025,SDG4_Education,60.7,50.0,71.4,-1.18,Declining
+Manipur,2026,SDG4_Education,59.5,47.5,71.5,-1.18,Declining
+Manipur,2024,SDG13_Climate,95.9,35.7,100.0,11.63,Improving
+Manipur,2025,SDG13_Climate,100.0,40.4,100.0,11.63,Improving
+Manipur,2026,SDG13_Climate,100.0,44.2,100.0,11.63,Improving
+Meghalaya,2024,SDG3_Health,79.3,58.7,100.0,4.24,Improving
+Meghalaya,2025,SDG3_Health,83.6,60.5,100.0,4.24,Improving
+Meghalaya,2026,SDG3_Health,87.8,62.1,100.0,4.24,Improving
+Meghalaya,2024,SDG4_Education,36.2,30.5,41.9,-3.27,Declining
+Meghalaya,2025,SDG4_Education,32.9,26.5,39.3,-3.27,Declining
+Meghalaya,2026,SDG4_Education,29.7,22.5,36.8,-3.27,Declining
+Meghalaya,2024,SDG13_Climate,100.0,39.5,100.0,13.77,Improving
+Meghalaya,2025,SDG13_Climate,100.0,45.2,100.0,13.77,Improving
+Meghalaya,2026,SDG13_Climate,100.0,49.9,100.0,13.77,Improving
+Mizoram,2024,SDG3_Health,80.6,42.6,100.0,3.93,Improving
+Mizoram,2025,SDG3_Health,84.5,42.1,100.0,3.93,Improving
+Mizoram,2026,SDG3_Health,88.5,41.1,100.0,3.93,Improving
+Mizoram,2024,SDG4_Education,64.9,60.6,69.1,0.82,Improving
+Mizoram,2025,SDG4_Education,65.7,60.9,70.5,0.82,Improving
+Mizoram,2026,SDG4_Education,66.5,61.2,71.8,0.82,Improving
+Mizoram,2024,SDG13_Climate,100.0,43.6,100.0,11.66,Improving
+Mizoram,2025,SDG13_Climate,100.0,48.2,100.0,11.66,Improving
+Mizoram,2026,SDG13_Climate,100.0,52.1,100.0,11.66,Improving
+Nagaland,2024,SDG3_Health,76.4,38.8,100.0,7.02,Improving
+Nagaland,2025,SDG3_Health,83.4,41.4,100.0,7.02,Improving
+Nagaland,2026,SDG3_Health,90.4,43.6,100.0,7.02,Improving
+Nagaland,2024,SDG4_Education,42.7,29.0,56.4,-0.36,Declining
+Nagaland,2025,SDG4_Education,42.4,27.1,57.7,-0.36,Declining
+Nagaland,2026,SDG4_Education,42.0,25.0,59.1,-0.36,Declining
+Nagaland,2024,SDG13_Climate,99.5,49.8,100.0,9.6,Improving
+Nagaland,2025,SDG13_Climate,100.0,53.7,100.0,9.6,Improving
+Nagaland,2026,SDG13_Climate,100.0,56.8,100.0,9.6,Improving
+Odisha,2024,SDG3_Health,78.5,69.6,87.5,3.63,Improving
+Odisha,2025,SDG3_Health,82.2,72.1,92.2,3.63,Improving
+Odisha,2026,SDG3_Health,85.8,74.6,97.0,3.63,Improving
+Odisha,2024,SDG4_Education,42.0,33.1,50.9,0.1,Stagnant
+Odisha,2025,SDG4_Education,42.1,32.2,52.0,0.1,Stagnant
+Odisha,2026,SDG4_Education,42.2,31.1,53.3,0.1,Stagnant
+Odisha,2024,SDG13_Climate,60.3,51.5,69.2,-1.71,Declining
+Odisha,2025,SDG13_Climate,58.6,48.7,68.5,-1.71,Declining
+Odisha,2026,SDG13_Climate,56.9,45.8,68.0,-1.71,Declining
+Punjab,2024,SDG3_Health,81.9,75.5,88.4,1.79,Improving
+Punjab,2025,SDG3_Health,83.7,76.5,90.9,1.79,Improving
+Punjab,2026,SDG3_Health,85.5,77.5,93.5,1.79,Improving
+Punjab,2024,SDG4_Education,72.7,55.4,90.1,1.54,Improving
+Punjab,2025,SDG4_Education,74.3,54.9,93.6,1.54,Improving
+Punjab,2026,SDG4_Education,75.8,54.2,97.4,1.54,Improving
+Punjab,2024,SDG13_Climate,72.6,56.6,88.6,3.09,Improving
+Punjab,2025,SDG13_Climate,75.7,57.9,93.5,3.09,Improving
+Punjab,2026,SDG13_Climate,78.8,58.9,98.7,3.09,Improving
+Rajasthan,2024,SDG3_Health,81.8,63.0,100.0,4.66,Improving
+Rajasthan,2025,SDG3_Health,86.5,65.5,100.0,4.66,Improving
+Rajasthan,2026,SDG3_Health,91.1,67.7,100.0,4.66,Improving
+Rajasthan,2024,SDG4_Education,67.4,57.8,77.0,2.69,Improving
+Rajasthan,2025,SDG4_Education,70.1,59.3,80.8,2.69,Improving
+Rajasthan,2026,SDG4_Education,72.8,60.8,84.8,2.69,Improving
+Rajasthan,2024,SDG13_Climate,63.5,59.9,67.0,0.69,Improving
+Rajasthan,2025,SDG13_Climate,64.2,60.2,68.1,0.69,Improving
+Rajasthan,2026,SDG13_Climate,64.8,60.4,69.3,0.69,Improving
+Sikkim,2024,SDG3_Health,70.0,61.9,78.1,2.53,Improving
+Sikkim,2025,SDG3_Health,72.5,63.5,81.6,2.53,Improving
+Sikkim,2026,SDG3_Health,75.1,65.0,85.1,2.53,Improving
+Sikkim,2024,SDG4_Education,67.6,61.7,73.5,1.89,Improving
+Sikkim,2025,SDG4_Education,69.5,62.9,76.1,1.89,Improving
+Sikkim,2026,SDG4_Education,71.4,64.0,78.8,1.89,Improving
+Sikkim,2024,SDG13_Climate,100.0,40.0,100.0,13.83,Improving
+Sikkim,2025,SDG13_Climate,100.0,45.7,100.0,13.83,Improving
+Sikkim,2026,SDG13_Climate,100.0,50.4,100.0,13.83,Improving
+Tamil Nadu,2024,SDG3_Health,78.7,70.8,86.6,0.16,Stagnant
+Tamil Nadu,2025,SDG3_Health,78.9,70.1,87.7,0.16,Stagnant
+Tamil Nadu,2026,SDG3_Health,79.0,69.2,88.9,0.16,Stagnant
+Tamil Nadu,2024,SDG4_Education,76.0,70.4,81.6,1.24,Improving
+Tamil Nadu,2025,SDG4_Education,77.2,71.0,83.5,1.24,Improving
+Tamil Nadu,2026,SDG4_Education,78.5,71.5,85.5,1.24,Improving
+Tamil Nadu,2024,SDG13_Climate,100.0,43.5,100.0,12.34,Improving
+Tamil Nadu,2025,SDG13_Climate,100.0,48.4,100.0,12.34,Improving
+Tamil Nadu,2026,SDG13_Climate,100.0,52.5,100.0,12.34,Improving
+Telangana,2024,SDG3_Health,71.5,59.4,83.6,0.49,Improving
+Telangana,2025,SDG3_Health,72.0,58.5,85.5,0.49,Improving
+Telangana,2026,SDG3_Health,72.5,57.4,87.6,0.49,Improving
+Telangana,2024,SDG4_Education,63.6,61.8,65.4,-0.02,Stagnant
+Telangana,2025,SDG4_Education,63.6,61.6,65.6,-0.02,Stagnant
+Telangana,2026,SDG4_Education,63.6,61.3,65.8,-0.02,Stagnant
+Telangana,2024,SDG13_Climate,53.9,41.4,66.3,-2.4,Declining
+Telangana,2025,SDG13_Climate,51.5,37.6,65.3,-2.4,Declining
+Telangana,2026,SDG13_Climate,49.1,33.6,64.5,-2.4,Declining
+Tripura,2024,SDG3_Health,85.3,79.0,91.5,5.03,Improving
+Tripura,2025,SDG3_Health,90.3,83.3,97.3,5.03,Improving
+Tripura,2026,SDG3_Health,95.3,87.6,100.0,5.03,Improving
+Tripura,2024,SDG4_Education,46.6,25.2,68.0,-0.87,Declining
+Tripura,2025,SDG4_Education,45.7,21.8,69.6,-0.87,Declining
+Tripura,2026,SDG4_Education,44.9,18.2,71.6,-0.87,Declining
+Tripura,2024,SDG13_Climate,61.3,36.4,86.1,4.8,Improving
+Tripura,2025,SDG13_Climate,66.1,38.3,93.8,4.8,Improving
+Tripura,2026,SDG13_Climate,70.9,39.9,100.0,4.8,Improving
+Uttar Pradesh,2024,SDG3_Health,76.2,40.5,100.0,7.44,Improving
+Uttar Pradesh,2025,SDG3_Health,83.6,43.8,100.0,7.44,Improving
+Uttar Pradesh,2026,SDG3_Health,91.1,46.7,100.0,7.44,Improving
+Uttar Pradesh,2024,SDG4_Education,55.6,53.1,58.1,1.31,Improving
+Uttar Pradesh,2025,SDG4_Education,56.9,54.1,59.7,1.31,Improving
+Uttar Pradesh,2026,SDG4_Education,58.2,55.1,61.4,1.31,Improving
+Uttar Pradesh,2024,SDG13_Climate,54.9,47.8,62.0,1.37,Improving
+Uttar Pradesh,2025,SDG13_Climate,56.3,48.4,64.2,1.37,Improving
+Uttar Pradesh,2026,SDG13_Climate,57.7,48.8,66.5,1.37,Improving
+Uttarakhand,2024,SDG3_Health,100.0,64.6,100.0,8.95,Improving
+Uttarakhand,2025,SDG3_Health,100.0,69.3,100.0,8.95,Improving
+Uttarakhand,2026,SDG3_Health,100.0,73.6,100.0,8.95,Improving
+Uttarakhand,2024,SDG4_Education,75.1,71.4,78.7,1.54,Improving
+Uttarakhand,2025,SDG4_Education,76.6,72.6,80.7,1.54,Improving
+Uttarakhand,2026,SDG4_Education,78.2,73.6,82.7,1.54,Improving
+Uttarakhand,2024,SDG13_Climate,79.8,58.5,100.0,4.11,Improving
+Uttarakhand,2025,SDG13_Climate,83.9,60.1,100.0,4.11,Improving
+Uttarakhand,2026,SDG13_Climate,88.0,61.5,100.0,4.11,Improving
+West Bengal,2024,SDG3_Health,83.3,75.4,91.3,2.57,Improving
+West Bengal,2025,SDG3_Health,85.9,77.0,94.8,2.57,Improving
+West Bengal,2026,SDG3_Health,88.5,78.6,98.4,2.57,Improving
+West Bengal,2024,SDG4_Education,62.3,59.1,65.5,2.17,Improving
+West Bengal,2025,SDG4_Education,64.4,60.9,68.0,2.17,Improving
+West Bengal,2026,SDG4_Education,66.6,62.6,70.6,2.17,Improving
+West Bengal,2024,SDG13_Climate,49.1,36.7,61.6,2.4,Improving
+West Bengal,2025,SDG13_Climate,51.5,37.7,65.4,2.4,Improving
+West Bengal,2026,SDG13_Climate,53.9,38.5,69.4,2.4,Improving
+Andaman and Nicobar Islands,2024,SDG3_Health,71.2,70.4,72.0,0.99,Improving
+Andaman and Nicobar Islands,2025,SDG3_Health,72.2,71.3,73.1,0.99,Improving
+Andaman and Nicobar Islands,2026,SDG3_Health,73.2,72.2,74.2,0.99,Improving
+Andaman and Nicobar Islands,2024,SDG4_Education,72.2,71.4,73.0,0.99,Improving
+Andaman and Nicobar Islands,2025,SDG4_Education,73.2,72.3,74.1,0.99,Improving
+Andaman and Nicobar Islands,2026,SDG4_Education,74.2,73.2,75.2,0.99,Improving
+Andaman and Nicobar Islands,2024,SDG13_Climate,71.2,70.4,72.0,0.99,Improving
+Andaman and Nicobar Islands,2025,SDG13_Climate,72.2,71.3,73.1,0.99,Improving
+Andaman and Nicobar Islands,2026,SDG13_Climate,73.2,72.2,74.2,0.99,Improving
+Chandigarh,2024,SDG3_Health,79.2,78.4,80.0,0.99,Improving
+Chandigarh,2025,SDG3_Health,80.2,79.3,81.1,0.99,Improving
+Chandigarh,2026,SDG3_Health,81.2,80.2,82.2,0.99,Improving
+Chandigarh,2024,SDG4_Education,85.2,84.4,86.0,0.99,Improving
+Chandigarh,2025,SDG4_Education,86.2,85.3,87.1,0.99,Improving
+Chandigarh,2026,SDG4_Education,87.2,86.2,88.2,0.99,Improving
+Chandigarh,2024,SDG13_Climate,65.2,64.4,66.0,0.99,Improving
+Chandigarh,2025,SDG13_Climate,66.2,65.3,67.1,0.99,Improving
+Chandigarh,2026,SDG13_Climate,67.2,66.2,68.2,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2024,SDG3_Health,65.2,64.4,66.0,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2025,SDG3_Health,66.2,65.3,67.1,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2026,SDG3_Health,67.2,66.2,68.2,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2024,SDG4_Education,64.2,63.4,65.0,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2025,SDG4_Education,65.2,64.3,66.1,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2026,SDG4_Education,66.2,65.2,67.2,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2024,SDG13_Climate,57.2,56.4,58.0,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2025,SDG13_Climate,58.2,57.3,59.1,0.99,Improving
+Dadra and Nagar Haveli and Daman and Diu,2026,SDG13_Climate,59.2,58.2,60.2,0.99,Improving
+Delhi,2024,SDG3_Health,76.2,75.4,77.0,0.99,Improving
+Delhi,2025,SDG3_Health,77.2,76.3,78.1,0.99,Improving
+Delhi,2026,SDG3_Health,78.2,77.2,79.2,0.99,Improving
+Delhi,2024,SDG4_Education,81.2,80.4,82.0,0.99,Improving
+Delhi,2025,SDG4_Education,82.2,81.3,83.1,0.99,Improving
+Delhi,2026,SDG4_Education,83.2,82.2,84.2,0.99,Improving
+Delhi,2024,SDG13_Climate,51.2,50.4,52.0,0.99,Improving
+Delhi,2025,SDG13_Climate,52.2,51.3,53.1,0.99,Improving
+Delhi,2026,SDG13_Climate,53.2,52.2,54.2,0.99,Improving
+Jammu and Kashmir,2024,SDG3_Health,59.1,57.5,60.7,1.09,Improving
+Jammu and Kashmir,2025,SDG3_Health,60.2,58.4,62.0,1.09,Improving
+Jammu and Kashmir,2026,SDG3_Health,61.3,59.3,63.3,1.09,Improving
+Jammu and Kashmir,2024,SDG4_Education,60.1,58.5,61.7,1.09,Improving
+Jammu and Kashmir,2025,SDG4_Education,61.2,59.4,63.0,1.09,Improving
+Jammu and Kashmir,2026,SDG4_Education,62.3,60.3,64.3,1.09,Improving
+Jammu and Kashmir,2024,SDG13_Climate,60.2,59.4,61.0,0.99,Improving
+Jammu and Kashmir,2025,SDG13_Climate,61.2,60.3,62.1,0.99,Improving
+Jammu and Kashmir,2026,SDG13_Climate,62.2,61.2,63.2,0.99,Improving
+Ladakh,2024,SDG3_Health,62.2,61.4,63.0,0.99,Improving
+Ladakh,2025,SDG3_Health,63.2,62.3,64.1,0.99,Improving
+Ladakh,2026,SDG3_Health,64.2,63.2,65.2,0.99,Improving
+Ladakh,2024,SDG4_Education,61.2,60.4,62.0,0.99,Improving
+Ladakh,2025,SDG4_Education,62.2,61.3,63.1,0.99,Improving
+Ladakh,2026,SDG4_Education,63.2,62.2,64.2,0.99,Improving
+Ladakh,2024,SDG13_Climate,63.2,62.4,64.0,0.99,Improving
+Ladakh,2025,SDG13_Climate,64.2,63.3,65.1,0.99,Improving
+Ladakh,2026,SDG13_Climate,65.2,64.2,66.2,0.99,Improving
+Lakshadweep,2024,SDG3_Health,74.2,73.4,75.0,0.99,Improving
+Lakshadweep,2025,SDG3_Health,75.2,74.3,76.1,0.99,Improving
+Lakshadweep,2026,SDG3_Health,76.2,75.2,77.2,0.99,Improving
+Lakshadweep,2024,SDG4_Education,73.2,72.4,74.0,0.99,Improving
+Lakshadweep,2025,SDG4_Education,74.2,73.3,75.1,0.99,Improving
+Lakshadweep,2026,SDG4_Education,75.2,74.2,76.2,0.99,Improving
+Lakshadweep,2024,SDG13_Climate,69.2,68.4,70.0,0.99,Improving
+Lakshadweep,2025,SDG13_Climate,70.2,69.3,71.1,0.99,Improving
+Lakshadweep,2026,SDG13_Climate,71.2,70.2,72.2,0.99,Improving
+Puducherry,2024,SDG3_Health,76.2,75.4,77.0,0.99,Improving
+Puducherry,2025,SDG3_Health,77.2,76.3,78.1,0.99,Improving
+Puducherry,2026,SDG3_Health,78.2,77.2,79.2,0.99,Improving
+Puducherry,2024,SDG4_Education,76.2,75.4,77.0,0.99,Improving
+Puducherry,2025,SDG4_Education,77.2,76.3,78.1,0.99,Improving
+Puducherry,2026,SDG4_Education,78.2,77.2,79.2,0.99,Improving
+Puducherry,2024,SDG13_Climate,62.2,61.4,63.0,0.99,Improving
+Puducherry,2025,SDG13_Climate,63.2,62.3,64.1,0.99,Improving
+Puducherry,2026,SDG13_Climate,64.2,63.2,65.2,0.99,Improving
+India,2024,SDG3_Health,86.3,66.5,100.0,4.89,Improving
+India,2025,SDG3_Health,91.2,69.0,100.0,4.89,Improving
+India,2026,SDG3_Health,96.0,71.4,100.0,4.89,Improving
+India,2024,SDG4_Education,60.8,57.1,64.5,0.61,Improving
+India,2025,SDG4_Education,61.4,57.3,65.5,0.61,Improving
+India,2026,SDG4_Education,62.0,57.4,66.6,0.61,Improving
+India,2024,SDG13_Climate,72.1,59.7,84.6,2.4,Improving
+India,2025,SDG13_Climate,74.5,60.7,88.4,2.4,Improving
+India,2026,SDG13_Climate,76.9,61.5,92.4,2.4,Improving

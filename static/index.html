@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG Predictive Monitoring Dashboard | VIT Chennai</title>
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js for High-Fidelity Responsive Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <!-- Top Hero Banner -->
+  <header class="header-banner">
+    <div class="banner-top">
+      <div class="title-group">
+        <h1>Predictive Dashboard for SDG Performance Monitoring</h1>
+        <p>Machine Learning Multi-Year Trajectory Forecasting & Risk Early Warning Engine for Indian States</p>
+      </div>
+      <div class="meta-tags">
+        <span class="tag-pill"><span class="pulse-dot"></span> ML Engine Active (108 Models)</span>
+        <span class="tag-pill institution">BCSE497J : Project I</span>
+        <span class="tag-pill live">VIT Chennai Campus (SCOPE)</span>
+      </div>
+    </div>
+    
+    <div class="banner-submeta">
+      <div>👨‍🎓 <b>Authors:</b> Sakhi Telang (23BAI1105) · Akhilesh Deshmukh (23BRS1149) · Vinayak Rathod (23BCE1747)</div>
+      <div>👨‍🏫 <b>Guided by:</b> Dr. Sureshkumar WI (Associate Professor)</div>
+      <div>🎯 <b>Coverage:</b> 36 States & UTs · SDGs 3, 4, 13 · Horizon 2018–2026</div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Global Control Bar -->
+    <section class="glass-panel control-bar">
+      <div class="control-group">
+        <span class="control-label">📍 State / UT:</span>
+        <select id="stateSelect"></select>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">📅 Target Horizon:</span>
+        <div class="year-btn-group">
+          <button class="year-btn" data-year="2024">2024</button>
+          <button class="year-btn" data-year="2025">2025</button>
+          <button class="year-btn active" data-year="2026">2026</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">🎯 Focus SDG:</span>
+        <select id="sdgFilterSelect">
+          <option value="ALL">All 3 Focus Goals (Overview)</option>
+          <option value="SDG3_Health">SDG 3: Good Health & Well-Being</option>
+          <option value="SDG4_Education">SDG 4: Quality Education</option>
+          <option value="SDG13_Climate">SDG 13: Climate Action</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <a href="/api/export/projections" class="btn-primary" download>
+          ⬇️ Export 2024-26 Projections CSV
+        </a>
+      </div>
+    </section>
+
+    <!-- Top Executive KPI Metric Cards -->
+    <section class="kpi-row">
+      <div class="glass-panel kpi-card">
+        <div class="kpi-title">🏥 SDG 3 (Health) National Avg</div>
+        <div class="kpi-value" id="kpi-sdg3-val">--</div>
+        <div class="kpi-delta" id="kpi-sdg3-delta">Loading...</div>
+      </div>
+
+      <div class="glass-panel kpi-card">
+        <div class="kpi-title">📚 SDG 4 (Education) National Avg</div>
+        <div class="kpi-value" id="kpi-sdg4-val">--</div>
+        <div class="kpi-delta" id="kpi-sdg4-delta">Loading...</div>
+      </div>
+
+      <div class="glass-panel kpi-card">
+        <div class="kpi-title">🌿 SDG 13 (Climate) National Avg</div>
+        <div class="kpi-value" id="kpi-sdg13-val">--</div>
+        <div class="kpi-delta" id="kpi-sdg13-delta">Loading...</div>
+      </div>
+
+      <div class="glass-panel kpi-card">
+        <div class="kpi-title">🔴 Aspirant States (<50)</div>
+        <div class="kpi-value" id="kpi-aspirant-val" style="color: var(--accent-red);">--</div>
+        <div class="kpi-delta" id="kpi-aspirant-desc">Across 36 States/UTs</div>
+      </div>
+
+      <div class="glass-panel kpi-card">
+        <div class="kpi-title">🚨 Imminent Drop Triggers</div>
+        <div class="kpi-value" id="kpi-alert-val" style="color: var(--accent-amber);">--</div>
+        <div class="kpi-delta neutral">50-Point Threshold Breaches</div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-forecaster">📈 Trajectory Forecaster</button>
+      <button class="tab-btn" data-tab="tab-risk">🚨 Risk Matrix & Alerts</button>
+      <button class="tab-btn" data-tab="tab-geo">🗺️ Spatial Analytics & Rankings</button>
+      <button class="tab-btn" data-tab="tab-climate">🌿 SDG 13 Climate Intelligence</button>
+      <button class="tab-btn" data-tab="tab-health">🏥 SDG 3 Health Indicators</button>
+      <button class="tab-btn" data-tab="tab-policy">🏛️ Policy & Governance</button>
+      <button class="tab-btn" data-tab="tab-methodology">🔬 ML Validation & Review 1</button>
+      <button class="tab-btn" data-tab="tab-export">📥 Export Center</button>
+    </nav>
+
+    <!-- TAB 1: TRAJECTORY FORECASTER -->
+    <section id="tab-forecaster" class="tab-content active">
+      <div class="grid-2col">
+        <!-- Main Line Chart -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">📈 Longitudinal Multi-Year Trajectory (2018–2026): <span id="forecaster-state-title" style="color: var(--accent-cyan);">Tamil Nadu</span></h3>
+            <span class="badge badge-low">95% Confidence Interval Enabled</span>
+          </div>
+          <div class="chart-box">
+            <canvas id="trendChart"></canvas>
+          </div>
+          <div style="font-size: 11px; color: var(--text-secondary); margin-top: 14px; display: flex; justify-content: space-between;">
+            <span>Solid Points: <b>2018–2023 Historical NITI Aayog Data</b></span>
+            <span>Dashed Diamonds: <b>2024–2026 Scikit-learn OLS Forward Forecast</b></span>
+            <span>Horizontal Lines: <b>Front Runner (≥75) / Aspirant (<50)</b></span>
+          </div>
+        </div>
+
+        <!-- Sidebar Summary Cards -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">🎯 Goal Forecast Scorecards</h3>
+          </div>
+          <div id="state-goal-cards"></div>
+        </div>
+      </div>
+
+      <!-- Comparative Trajectory Box -->
+      <div class="glass-panel" style="padding: 22px;">
+        <div class="card-header">
+          <h3 class="card-title">🔄 Cross-State Comparative Trajectory</h3>
+          <div class="control-group">
+            <span class="control-label">Compare With:</span>
+            <select id="compareStateSelect"></select>
+            <select id="compareSdgSelect">
+              <option value="SDG3_Health">SDG 3 (Health)</option>
+              <option value="SDG4_Education">SDG 4 (Education)</option>
+              <option value="SDG13_Climate">SDG 13 (Climate Action)</option>
+            </select>
+          </div>
+        </div>
+        <div class="chart-box" style="height: 320px;">
+          <canvas id="compareChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: RISK MATRIX & EARLY WARNING ALERTS -->
+    <section id="tab-risk" class="tab-content">
+      <!-- Priority Alerts -->
+      <div class="glass-panel" style="padding: 22px; margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">🚨 Automated Early Warning Alerts & Threshold Breaches</h3>
+          <span class="tag-pill live">Rule-based Automated Triggers</span>
+        </div>
+        <div id="priority-alerts-container"></div>
+      </div>
+
+      <!-- Full Risk Classification Table -->
+      <div class="glass-panel" style="padding: 22px;">
+        <div class="card-header">
+          <h3 class="card-title">📋 State Risk Classification Matrix (<span class="selected-year-text">2026</span>)</h3>
+          <div class="control-group">
+            <input type="text" id="tableSearchInput" placeholder="🔍 Search state name...">
+            <select id="tableRiskFilter">
+              <option value="ALL">All Risk Tiers</option>
+              <option value="Low Risk">🟢 Low Risk (≥75)</option>
+              <option value="Medium Risk">🟡 Medium Risk (50–74)</option>
+              <option value="High Risk">🔴 High Risk (<50)</option>
+            </select>
+            <select id="tableSdgFilter">
+              <option value="ALL">All Goals</option>
+              <option value="SDG3_Health">SDG 3 (Health)</option>
+              <option value="SDG4_Education">SDG 4 (Education)</option>
+              <option value="SDG13_Climate">SDG 13 (Climate)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="riskDataTable">
+            <thead>
+              <tr>
+                <th>State / Union Territory</th>
+                <th>SDG Goal</th>
+                <th>2023 Baseline</th>
+                <th>Target Forecast (<span class="selected-year-text">2026</span>)</th>
+                <th>95% Confidence Interval</th>
+                <th>Velocity (pts/yr)</th>
+                <th>NITI Category</th>
+                <th>Risk Band</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SPATIAL ANALYTICS & RANKINGS -->
+    <section id="tab-geo" class="tab-content">
+      <div class="grid-2col">
+        <!-- India Spatial Heatmap Visualization -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">🗺️ India State Distribution Heatmap (<span class="selected-year-text">2026</span>)</h3>
+            <div class="control-group">
+              <select id="geoMetricSelect">
+                <option value="Composite_Score">Composite Score (All 3 Goals)</option>
+                <option value="SDG3_Health">SDG 3: Health & Well-Being</option>
+                <option value="SDG4_Education">SDG 4: Quality Education</option>
+                <option value="SDG13_Climate">SDG 13: Climate Action</option>
+              </select>
+            </div>
+          </div>
+          <div id="geo-heatmap-container" style="min-height: 480px; display: flex; flex-direction: column; justify-content: center;">
+            <div id="state-cards-grid" class="grid-3col" style="max-height: 520px; overflow-y: auto; padding-right: 8px;"></div>
+          </div>
+        </div>
+
+        <!-- State Leaderboard -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">🏆 State Ranking Leaderboard</h3>
+          </div>
+          <div id="state-leaderboard-container" style="max-height: 520px; overflow-y: auto;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: SDG 13 CLIMATE PANEL -->
+    <section id="tab-climate" class="tab-content">
+      <div class="glass-panel" style="padding: 20px; margin-bottom: 24px;">
+        <h3 style="color: var(--accent-cyan); margin-bottom: 6px;">🌿 SDG 13: Climate Action Intelligence & Decarbonization Readiness</h3>
+        <p style="font-size: 13px; color: var(--text-secondary);">
+          SDG 13 evaluates state progress across clean energy adoption, carbon intensity reduction,
+          disaster mitigation, and climate vulnerability resilience under the State Action Plans on Climate Change (SAPCC).
+        </p>
+      </div>
+
+      <div class="grid-equal">
+        <!-- Decarbonization Velocity Chart -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">⚡ Climate Action Annual Velocity (pts/yr)</h3>
+          </div>
+          <div class="chart-box" style="height: 380px;">
+            <canvas id="climateVelocityChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Renewable Energy Capacity Breakdown -->
+        <div class="glass-panel" style="padding: 22px;">
+          <div class="card-header">
+            <h3 class="card-title">🔋 Renewable Energy Share of Installed Capacity (`SDG_13_18.csv`)</h3>
+          </div>
+          <div class="chart-box" style="height: 380px;">
+            <canvas id="renewableEnergyChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SDG 3 HEALTH INDICATORS -->
+    <section id="tab-health" class="tab-content">
+      <div class="glass-panel" style="padding: 22px; margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">🏥 SDG 3: Good Health & Well-Being Sub-Indicator Breakdown (`SDG_3_25.csv`)</h3>
+          <div class="control-group">
+            <select id="healthIndicatorSelect"></select>
+          </div>
+        </div>
+        <div class="chart-box" style="height: 400px;">
+          <canvas id="healthIndChart"></canvas>
+        </div>
+      </div>
+
+      <div class="glass-panel" style="padding: 22px;">
+        <div class="card-header">
+          <h3 class="card-title">📋 Comprehensive Health Indicator Matrix</h3>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table" id="healthIndTable">
+            <thead>
+              <tr>
+                <th>Area / State</th>
+                <th>Under-5 Mortality (per 1k)</th>
+                <th>TB Notification Rate</th>
+                <th>Family Planning (%)</th>
+                <th>Doctors & Nurses (per 10k)</th>
+                <th>Immunization Coverage (%)</th>
+                <th>Maternal Mortality Ratio (MMR)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: POLICY & GOVERNANCE ADVISORY -->
+    <section id="tab-policy" class="tab-content">
+      <!-- State Leadership Brief -->
+      <div class="glass-panel" style="padding: 24px; margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">🏛️ Executive Governance Brief: <span id="policy-state-name" style="color: var(--accent-cyan);">Tamil Nadu</span></h3>
+          <span class="tag-pill">Target Horizon: 2026</span>
+        </div>
+        <div id="policy-executive-summary" style="margin-bottom: 20px;"></div>
+        <div id="policy-recommendations-container"></div>
+      </div>
+
+      <!-- National Priority Resource Allocation Table -->
+      <div class="glass-panel" style="padding: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">🎯 National Resource Reallocation Priority States (2026 Horizon)</h3>
+          <span class="badge badge-high">High-Priority Intervention Target</span>
+        </div>
+        <div id="national-priorities-container"></div>
+      </div>
+    </section>
+
+    <!-- TAB 7: METHODOLOGY & REVIEW 1 SPECIFICATION -->
+    <section id="tab-methodology" class="tab-content">
+      <!-- 3-Tier Architecture Flow -->
+      <div class="card-header">
+        <h3 class="card-title">🏗️ System Architecture: Three-Tier Pipeline (Slide 10)</h3>
+      </div>
+      <div class="grid-3col">
+        <div class="arch-box">
+          <h4 style="color: var(--accent-cyan);">1. Data Processing Layer</h4>
+          <ul>
+            <li><b>Ingestion:</b> Raw NITI Aayog SDG India Index CSV spreadsheets (2018–2023).</li>
+            <li><b>Cleansing:</b> Standardizes 36 state/column names and removes null values.</li>
+            <li><b>Transformation:</b> Year string to integer format, long-format reshaping.</li>
+          </ul>
+        </div>
+
+        <div class="arch-box">
+          <h4 style="color: var(--accent-indigo);">2. Machine Learning & Forecasting Layer</h4>
+          <ul>
+            <li><b>Modeling:</b> 108 independent Scikit-learn OLS Linear Regression models.</li>
+            <li><b>Projections:</b> State-level composite index scores for 2024, 2025, and 2026.</li>
+            <li><b>Risk Classifier:</b> Low Risk (≥75) · Medium Risk (50–74) · High Risk (<50).</li>
+          </ul>
+        </div>
+
+        <div class="arch-box">
+          <h4 style="color: var(--accent-purple);">3. Visualisation Layer</h4>
+          <ul>
+            <li><b>Framework:</b> High-performance custom web application for policymakers.</li>
+            <li><b>Features:</b> Dynamic dropdowns, 95% CI shaded bands, spatial analytics.</li>
+            <li><b>Export:</b> Automated 1-click downloadable CSV reports.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Holdout Validation Scorecard -->
+      <div class="glass-panel" style="padding: 22px; margin-top: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">🔬 Empirical Holdout Validation Metrics (Slide 9)</h3>
+          <span class="badge badge-low">Partition: 2018–2021 Train | 2022–2023 Test</span>
+        </div>
+
+        <div class="grid-3col" id="validation-kpis-grid" style="margin-bottom: 20px;"></div>
+
+        <h4 style="font-size: 14px; margin-bottom: 12px; color: var(--text-secondary);">📑 State-by-State Model Holdout Scorecard</h4>
+        <div class="table-wrapper" style="max-height: 400px; overflow-y: auto;">
+          <table class="data-table" id="valScorecardTable">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>SDG</th>
+                <th>2022 Actual</th>
+                <th>2022 Pred</th>
+                <th>2023 Actual</th>
+                <th>2023 Pred</th>
+                <th>RMSE</th>
+                <th>MAE</th>
+                <th>R²</th>
+                <th>Naive Baseline Beaten</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Literature Review & Citations -->
+      <div class="glass-panel" style="padding: 22px; margin-top: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">📚 Academic Literature Review & Citations (Slides 6–8, 11–12)</h3>
+        </div>
+        <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.8;">
+          <ol style="padding-left: 20px;">
+            <li><b>Vinuesa et al. (2020)</b>. <i>The role of artificial intelligence in achieving the SDGs</i>. Nature Communications, 11(1).</li>
+            <li><b>Sachs et al. (2023)</b>. <i>Sustainable Development Report 2023</i>. SDSN & Bertelsmann Stiftung.</li>
+            <li><b>NITI Aayog (2021, 2023)</b>. <i>SDG India Index and Dashboard 2020–21, 2022–23</i>. Government of India.</li>
+            <li><b>Huang et al. (2021)</b>. <i>Forecasting SDG progress using ML in developing nations</i>. Sustainability, 13(9).</li>
+            <li><b>Pradhan et al. (2017)</b>. <i>A systematic study of SDG interactions</i>. Earth's Future, 5(11).</li>
+            <li><b>James et al. (2023)</b>. <i>An Introduction to Statistical Learning with Applications in Python</i>. Springer.</li>
+            <li><b>Streamlit Inc. (2024)</b>. <i>Streamlit Documentation v1.20</i>. docs.streamlit.io.</li>
+            <li><b>Pedregosa et al. (2011)</b>. <i>Scikit-learn: Machine learning in Python</i>. JMLR, 12.</li>
+            <li><b>Alzubaidi et al. (2021)</b>. <i>Review of deep learning: Concepts, CNN architectures, challenges</i>. Journal of Big Data, 8(1).</li>
+            <li><b>Niu et al. (2020)</b>. <i>Time series forecasting using LSTM networks for environmental indicators</i>. Applied Energy, 259.</li>
+            <li><b>Bhatt and Bhatt (2022)</b>. <i>Machine learning applications in public health policy analysis in India</i>. Indian Journal of Public Health.</li>
+            <li><b>Fuso Nerini et al. (2019)</b>. <i>Connecting climate action with other Sustainable Development Goals</i>. Nature Sustainability, 2(8).</li>
+            <li><b>Giannetti et al. (2020)</b>. <i>Dashboard systems for SDG monitoring and environmental decision support</i>. Ecological Indicators, 117.</li>
+            <li><b>McKinney (2010)</b>. <i>Data structures for statistical computing in Python</i>. SciPy.</li>
+            <li><b>Hunter (2007)</b>. <i>Matplotlib: A 2D graphics environment</i>. Computing in Science & Engineering, 9(3).</li>
+            <li><b>United Nations (2015)</b>. <i>Transforming our world: The 2030 Agenda for Sustainable Development</i>. UN General Assembly.</li>
+            <li><b>Holtz and Healy (2017)</b>. <i>SHAP: A game theory approach to explain machine learning model output</i>. arXiv:1705.07874.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 8: EXPORT CENTER -->
+    <section id="tab-export" class="tab-content">
+      <div class="glass-panel" style="padding: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">📥 Data & Policy Report Export Center</h3>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">
+          Download clean CSV spreadsheets generated by the data pipeline, forward machine learning predictions, 
+          and validation scorecards for offline governance presentations and policy deliberation.
+        </p>
+
+        <div class="grid-3col">
+          <div class="glass-panel" style="padding: 20px; background: rgba(30, 41, 59, 0.5);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">1. Forward Projections (2024–2026)</h4>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">
+              All 324+ forecast data points across 36 States & UTs with 95% confidence intervals, growth velocity, and 3-tier risk tags.
+            </p>
+            <a href="/api/export/projections" class="btn-primary" download>⬇️ Download Projections CSV</a>
+          </div>
+
+          <div class="glass-panel" style="padding: 20px; background: rgba(30, 41, 59, 0.5);">
+            <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">2. Historical Baseline (2018–2023)</h4>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">
+              Cleaned and normalized multi-year NITI Aayog SDG India Index historical dataset covering all 36 States/UTs.
+            </p>
+            <a href="/api/export/historical" class="btn-secondary" download>⬇️ Download Historical CSV</a>
+          </div>
+
+          <div class="glass-panel" style="padding: 20px; background: rgba(30, 41, 59, 0.5);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 8px;">3. ML Validation Scorecard</h4>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">
+              Holdout evaluation metrics (RMSE, MAE, R², Naive baseline beaten) for all 108 linear regression models.
+            </p>
+            <a href="/api/export/validation" class="btn-secondary" download>⬇️ Download Validation CSV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <b>Predictive Dashboard for SDG Performance Monitoring</b> · BCSE497J Project I · Vellore Institute of Technology (VIT) Chennai<br>
+        Sakhi Telang (23BAI1105) · Akhilesh Deshmukh (23BRS1149) · Vinayak Rathod (23BCE1747) | Guided by Dr. Sureshkumar WI
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Application Logic -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
