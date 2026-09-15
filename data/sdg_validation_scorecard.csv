@@ -1,112 +1,112 @@
 State,SDG,RMSE,MAE,R2,Holdout_Actual_2022,Holdout_Pred_2022,Holdout_Actual_2023,Holdout_Pred_2023,Naive_Beaten
-Andhra Pradesh,SDG3_Health,5.55,5.39,0.6,77.7,81.8,78.0,84.7,False
-Andhra Pradesh,SDG4_Education,2.34,2.25,0.01,51.3,49.7,52.0,49.1,False
+Andhra Pradesh,SDG3_Health,0.72,0.71,0.86,77.7,77.1,78.0,77.1,True
+Andhra Pradesh,SDG4_Education,1.07,1.01,0.84,51.3,50.6,52.0,50.6,True
 Andhra Pradesh,SDG13_Climate,0.0,0.0,1.0,70.0,70.0,70.0,70.0,True
-Arunachal Pradesh,SDG3_Health,15.4,14.9,0.84,68.0,79.0,70.0,88.8,False
-Arunachal Pradesh,SDG4_Education,17.44,16.79,0.18,48.3,36.2,52.0,30.5,False
-Arunachal Pradesh,SDG13_Climate,35.84,34.65,0.71,61.0,86.5,61.0,104.8,False
-Assam,SDG3_Health,19.74,19.09,0.72,59.7,73.8,60.0,84.1,False
-Assam,SDG4_Education,0.15,0.15,0.97,41.7,41.8,41.0,41.2,True
-Assam,SDG13_Climate,15.14,14.64,0.7,59.0,69.8,59.0,77.5,False
-Bihar,SDG3_Health,18.17,17.49,0.73,66.7,79.3,67.0,89.4,False
-Bihar,SDG4_Education,5.89,5.65,0.82,31.0,35.0,32.0,39.3,False
-Bihar,SDG13_Climate,11.35,10.98,0.7,34.0,25.9,34.0,20.1,False
-Chhattisgarh,SDG3_Health,14.4,13.95,0.46,57.3,67.7,56.0,73.5,False
-Chhattisgarh,SDG4_Education,1.49,1.45,0.97,60.3,59.2,63.0,61.2,True
-Chhattisgarh,SDG13_Climate,22.7,21.96,0.7,47.0,63.2,47.0,74.7,False
-Goa,SDG3_Health,2.12,1.95,0.81,76.7,77.8,79.0,81.8,True
-Goa,SDG4_Education,0.52,0.51,0.86,71.7,71.3,72.0,71.4,True
-Goa,SDG13_Climate,16.4,15.86,0.7,54.0,65.7,54.0,74.0,False
-Gujarat,SDG3_Health,21.92,21.2,0.78,88.7,104.3,90.0,116.8,False
-Gujarat,SDG4_Education,0.85,0.8,0.96,56.0,56.5,58.0,59.1,True
-Gujarat,SDG13_Climate,13.87,13.42,0.7,74.0,83.9,74.0,90.9,False
-Haryana,SDG3_Health,9.91,9.6,0.73,72.7,79.8,73.0,85.1,False
-Haryana,SDG4_Education,9.01,8.7,0.56,72.7,66.3,77.0,66.0,False
-Haryana,SDG13_Climate,32.79,31.72,0.7,60.0,83.4,60.0,100.0,False
-Himachal Pradesh,SDG3_Health,9.07,8.75,0.87,81.3,87.7,83.0,94.1,False
-Himachal Pradesh,SDG4_Education,6.49,6.25,0.36,76.0,71.5,77.0,69.0,False
-Himachal Pradesh,SDG13_Climate,1.26,1.22,0.7,62.0,62.9,62.0,63.5,False
-Jharkhand,SDG3_Health,22.44,21.7,0.76,76.0,92.0,77.0,104.4,False
-Jharkhand,SDG4_Education,5.31,5.15,0.94,55.7,51.8,61.0,54.6,True
-Jharkhand,SDG13_Climate,3.78,3.66,0.7,30.0,32.7,30.0,34.6,False
-Karnataka,SDG3_Health,5.49,5.3,0.84,79.3,83.2,80.0,86.7,False
-Karnataka,SDG4_Education,1.67,1.59,0.83,63.3,62.2,63.0,60.9,False
-Karnataka,SDG13_Climate,2.52,2.44,0.7,73.0,74.8,73.0,76.1,False
-Kerala,SDG3_Health,17.62,17.04,0.3,77.3,64.7,80.0,58.5,False
-Kerala,SDG4_Education,3.49,3.36,0.83,81.3,83.7,82.0,86.3,False
-Kerala,SDG13_Climate,30.27,29.28,0.7,80.0,101.6,80.0,117.0,False
-Madhya Pradesh,SDG3_Health,19.52,18.9,0.46,58.0,72.0,56.0,79.8,False
-Madhya Pradesh,SDG4_Education,8.46,8.15,0.35,47.7,41.8,49.0,38.6,False
-Madhya Pradesh,SDG13_Climate,20.18,19.52,0.7,63.0,77.4,63.0,87.6,False
-Maharashtra,SDG3_Health,15.25,14.79,0.65,83.7,94.8,84.0,102.5,False
-Maharashtra,SDG4_Education,2.12,2.05,0.53,66.0,64.5,67.0,64.4,False
-Maharashtra,SDG13_Climate,29.01,28.06,0.7,73.0,93.7,73.0,108.4,False
-Manipur,SDG3_Health,2.28,2.26,0.75,72.7,70.8,75.0,72.4,True
-Manipur,SDG4_Education,5.98,5.74,0.49,64.3,60.2,65.0,57.6,False
-Manipur,SDG13_Climate,42.75,41.35,0.7,71.0,101.5,71.0,123.2,False
-Meghalaya,SDG3_Health,12.53,12.04,0.73,70.7,79.3,71.0,86.5,False
-Meghalaya,SDG4_Education,1.43,1.36,0.95,42.7,41.8,40.0,38.2,True
-Meghalaya,SDG13_Climate,49.36,47.7,0.71,80.0,115.0,80.0,140.4,False
-Mizoram,SDG3_Health,23.69,22.8,0.4,72.3,88.7,69.0,98.2,False
-Mizoram,SDG4_Education,3.0,2.89,0.7,63.3,61.2,65.0,61.3,False
-Mizoram,SDG13_Climate,42.88,41.48,0.7,79.0,109.6,79.0,131.4,False
-Nagaland,SDG3_Health,19.09,18.3,0.69,62.3,75.2,63.0,86.7,False
-Nagaland,SDG4_Education,9.13,8.8,0.04,43.7,37.3,46.0,34.8,False
-Nagaland,SDG13_Climate,35.32,34.16,0.7,79.0,104.2,79.0,122.1,False
-Odisha,SDG3_Health,6.25,6.05,0.91,71.0,75.5,73.0,80.6,False
-Odisha,SDG4_Education,5.91,5.7,0.01,41.7,45.8,40.0,47.3,False
-Odisha,SDG13_Climate,6.31,6.1,0.7,64.0,59.5,64.0,56.3,False
-Punjab,SDG3_Health,3.49,3.36,0.83,78.3,80.7,79.0,83.3,False
-Punjab,SDG4_Education,12.07,11.65,0.33,70.0,61.5,75.0,60.2,False
-Punjab,SDG13_Climate,11.35,10.98,0.7,66.0,74.1,66.0,79.9,False
-Rajasthan,SDG3_Health,13.34,12.9,0.79,72.0,81.5,73.0,89.3,False
-Rajasthan,SDG4_Education,5.16,4.95,0.83,62.0,65.5,63.0,69.4,False
-Rajasthan,SDG13_Climate,2.52,2.44,0.7,62.0,63.8,62.0,65.1,False
-Sikkim,SDG3_Health,4.94,4.79,0.86,64.7,68.3,66.0,72.0,False
-Sikkim,SDG4_Education,4.18,4.05,0.86,64.0,61.0,67.0,61.9,True
-Sikkim,SDG13_Climate,49.97,48.3,0.71,81.0,116.5,81.0,142.1,False
-Tamil Nadu,SDG3_Health,4.88,4.71,0.03,78.3,81.7,77.0,83.0,False
-Tamil Nadu,SDG4_Education,4.03,3.9,0.75,73.7,70.8,76.0,71.1,False
-Tamil Nadu,SDG13_Climate,45.41,43.92,0.7,81.0,113.4,81.0,136.4,False
-Telangana,SDG3_Health,6.73,6.55,0.09,71.0,66.0,73.0,64.9,False
-Telangana,SDG4_Education,1.24,1.2,0.01,63.7,62.8,64.0,62.5,False
-Telangana,SDG13_Climate,8.83,8.54,0.7,59.0,52.7,59.0,48.2,False
-Tripura,SDG3_Health,4.12,4.0,0.98,75.0,78.0,79.0,84.0,True
-Tripura,SDG4_Education,14.16,13.66,0.09,48.7,38.8,52.0,34.6,False
-Tripura,SDG13_Climate,17.66,17.08,0.7,51.0,63.6,51.0,72.6,False
-Uttar Pradesh,SDG3_Health,24.41,23.55,0.73,60.7,77.8,61.0,91.0,False
-Uttar Pradesh,SDG4_Education,0.79,0.75,0.94,53.0,53.5,54.0,55.0,True
-Uttar Pradesh,SDG13_Climate,5.05,4.88,0.7,52.0,55.6,52.0,58.2,False
-Uttarakhand,SDG3_Health,25.19,24.4,0.79,81.7,99.8,84.0,114.7,False
-Uttarakhand,SDG4_Education,1.52,1.45,0.92,72.0,73.0,73.0,74.9,True
-Uttarakhand,SDG13_Climate,15.14,14.64,0.7,71.0,81.8,71.0,89.5,False
-West Bengal,SDG3_Health,5.64,5.45,0.87,78.0,82.0,79.0,85.9,False
-West Bengal,SDG4_Education,0.14,0.1,0.97,58.0,58.0,60.0,60.2,True
-West Bengal,SDG13_Climate,8.83,8.54,0.7,44.0,50.3,44.0,54.8,False
-Andaman and Nicobar Islands,SDG3_Health,0.53,0.51,0.99,69.2,69.6,70.0,70.7,True
-Andaman and Nicobar Islands,SDG4_Education,0.53,0.51,0.99,70.2,70.6,71.0,71.7,True
-Andaman and Nicobar Islands,SDG13_Climate,0.53,0.51,0.99,69.2,69.6,70.0,70.7,True
-Chandigarh,SDG3_Health,0.53,0.51,0.99,77.2,77.6,78.0,78.7,True
-Chandigarh,SDG4_Education,0.53,0.51,0.99,83.2,83.6,84.0,84.7,True
-Chandigarh,SDG13_Climate,0.53,0.51,0.99,63.2,63.6,64.0,64.7,True
-Dadra and Nagar Haveli and Daman and Diu,SDG3_Health,0.53,0.51,0.99,63.2,63.6,64.0,64.7,True
-Dadra and Nagar Haveli and Daman and Diu,SDG4_Education,0.53,0.51,0.99,62.2,62.6,63.0,63.7,True
-Dadra and Nagar Haveli and Daman and Diu,SDG13_Climate,0.53,0.51,0.99,55.2,55.6,56.0,56.7,True
-Delhi,SDG3_Health,0.53,0.51,0.99,74.2,74.6,75.0,75.7,True
-Delhi,SDG4_Education,0.53,0.51,0.99,79.2,79.6,80.0,80.7,True
-Delhi,SDG13_Climate,0.53,0.51,0.99,49.2,49.6,50.0,50.7,True
-Jammu and Kashmir,SDG3_Health,0.07,0.05,0.97,57.0,57.0,58.0,58.1,True
-Jammu and Kashmir,SDG4_Education,0.07,0.05,0.97,58.0,58.0,59.0,59.1,True
-Jammu and Kashmir,SDG13_Climate,0.53,0.51,0.99,58.2,58.6,59.0,59.7,True
-Ladakh,SDG3_Health,0.53,0.51,0.99,60.2,60.6,61.0,61.7,True
-Ladakh,SDG4_Education,0.53,0.51,0.99,59.2,59.6,60.0,60.7,True
-Ladakh,SDG13_Climate,0.53,0.51,0.99,61.2,61.6,62.0,62.7,True
-Lakshadweep,SDG3_Health,0.53,0.51,0.99,72.2,72.6,73.0,73.7,True
-Lakshadweep,SDG4_Education,0.53,0.51,0.99,71.2,71.6,72.0,72.7,True
-Lakshadweep,SDG13_Climate,0.53,0.51,0.99,67.2,67.6,68.0,68.7,True
-Puducherry,SDG3_Health,0.53,0.51,0.99,74.2,74.6,75.0,75.7,True
-Puducherry,SDG4_Education,0.53,0.51,0.99,74.2,74.6,75.0,75.7,True
-Puducherry,SDG13_Climate,0.53,0.51,0.99,60.2,60.6,61.0,61.7,True
-India,SDG3_Health,14.07,13.6,0.79,76.0,86.0,77.0,94.2,False
-India,SDG4_Education,2.64,2.56,0.63,59.7,57.8,61.0,57.8,False
-India,SDG13_Climate,8.83,8.54,0.7,67.0,73.3,67.0,77.8,False
+Arunachal Pradesh,SDG3_Health,4.67,4.56,0.94,68.0,64.4,70.0,64.4,False
+Arunachal Pradesh,SDG4_Education,5.64,5.33,0.85,48.3,44.8,52.0,44.8,True
+Arunachal Pradesh,SDG13_Climate,2.1,2.1,0.92,61.0,58.9,61.0,58.9,False
+Assam,SDG3_Health,1.69,1.69,0.92,59.7,58.2,60.0,58.2,False
+Assam,SDG4_Education,1.27,1.22,0.97,41.7,42.6,41.0,42.6,True
+Assam,SDG13_Climate,0.84,0.84,0.92,59.0,58.2,59.0,58.2,False
+Bihar,SDG3_Health,2.18,2.18,0.93,66.7,64.7,67.0,64.7,False
+Bihar,SDG4_Education,2.54,2.49,0.94,31.0,29.0,32.0,29.0,False
+Bihar,SDG13_Climate,0.63,0.63,0.92,34.0,34.6,34.0,34.6,False
+Chhattisgarh,SDG3_Health,1.98,1.87,0.88,57.3,58.5,56.0,58.5,True
+Chhattisgarh,SDG4_Education,5.12,4.94,0.98,60.3,56.7,63.0,56.7,False
+Chhattisgarh,SDG13_Climate,1.26,1.26,0.92,47.0,45.7,47.0,45.7,False
+Goa,SDG3_Health,5.19,5.06,0.93,76.7,72.8,79.0,72.8,False
+Goa,SDG4_Education,0.65,0.64,0.97,71.7,71.2,72.0,71.2,True
+Goa,SDG13_Climate,0.91,0.91,0.92,54.0,53.1,54.0,53.1,False
+Gujarat,SDG3_Health,3.81,3.76,0.93,88.7,85.6,90.0,85.6,False
+Gujarat,SDG4_Education,4.06,3.93,0.97,56.0,53.1,58.0,53.1,False
+Gujarat,SDG13_Climate,0.77,0.77,0.92,74.0,73.2,74.0,73.2,False
+Haryana,SDG3_Health,1.14,1.13,0.92,72.7,71.7,73.0,71.7,False
+Haryana,SDG4_Education,7.82,7.52,0.94,72.7,67.3,77.0,67.3,False
+Haryana,SDG13_Climate,1.82,1.82,0.92,60.0,58.2,60.0,58.2,False
+Himachal Pradesh,SDG3_Health,3.81,3.71,0.95,81.3,78.4,83.0,78.4,False
+Himachal Pradesh,SDG4_Education,1.39,1.3,0.87,76.0,75.2,77.0,75.2,True
+Himachal Pradesh,SDG13_Climate,0.07,0.07,0.92,62.0,61.9,62.0,61.9,True
+Jharkhand,SDG3_Health,3.16,3.12,0.93,76.0,73.4,77.0,73.4,False
+Jharkhand,SDG4_Education,10.15,9.8,0.98,55.7,48.6,61.0,48.6,False
+Jharkhand,SDG13_Climate,0.21,0.21,0.92,30.0,29.8,30.0,29.8,True
+Karnataka,SDG3_Health,1.61,1.57,0.94,79.3,78.1,80.0,78.1,False
+Karnataka,SDG4_Education,0.86,0.85,0.94,63.3,64.0,63.0,64.0,True
+Karnataka,SDG13_Climate,0.14,0.14,0.92,73.0,72.9,73.0,72.9,True
+Kerala,SDG3_Health,4.25,4.03,0.87,77.3,74.6,80.0,74.6,True
+Kerala,SDG4_Education,1.61,1.57,0.94,81.3,80.1,82.0,80.1,False
+Kerala,SDG13_Climate,1.68,1.68,0.92,80.0,78.3,80.0,78.3,False
+Madhya Pradesh,SDG3_Health,2.92,2.74,0.89,58.0,59.7,56.0,59.7,True
+Madhya Pradesh,SDG4_Education,1.91,1.8,0.87,47.7,46.6,49.0,46.6,True
+Madhya Pradesh,SDG13_Climate,1.12,1.12,0.92,63.0,61.9,63.0,61.9,False
+Maharashtra,SDG3_Health,1.14,1.13,0.89,83.7,82.7,84.0,82.7,False
+Maharashtra,SDG4_Education,1.79,1.72,0.93,66.0,64.8,67.0,64.8,True
+Maharashtra,SDG13_Climate,1.61,1.61,0.92,73.0,71.4,73.0,71.4,False
+Manipur,SDG3_Health,4.78,4.64,0.92,72.7,69.2,75.0,69.2,False
+Manipur,SDG4_Education,0.75,0.66,0.89,64.3,64.0,65.0,64.0,True
+Manipur,SDG13_Climate,2.38,2.38,0.92,71.0,68.6,71.0,68.6,False
+Meghalaya,SDG3_Health,1.83,1.83,0.92,70.7,69.0,71.0,69.0,False
+Meghalaya,SDG4_Education,5.39,5.22,0.97,42.7,46.6,40.0,46.6,False
+Meghalaya,SDG13_Climate,3.08,3.08,0.92,80.0,76.9,80.0,76.9,False
+Mizoram,SDG3_Health,4.44,4.12,0.87,72.3,74.8,69.0,74.8,True
+Mizoram,SDG4_Education,3.0,2.87,0.95,63.3,61.3,65.0,61.3,True
+Mizoram,SDG13_Climate,2.38,2.38,0.92,79.0,76.6,79.0,76.6,False
+Nagaland,SDG3_Health,3.41,3.39,0.91,62.3,59.3,63.0,59.3,False
+Nagaland,SDG4_Education,3.83,3.66,0.84,43.7,41.2,46.0,41.2,True
+Nagaland,SDG13_Climate,1.96,1.96,0.92,79.0,77.0,79.0,77.0,False
+Odisha,SDG3_Health,4.12,4.0,0.95,71.0,68.0,73.0,68.0,False
+Odisha,SDG4_Education,2.73,2.59,0.84,41.7,43.4,40.0,43.4,True
+Odisha,SDG13_Climate,0.35,0.35,0.92,64.0,64.3,64.0,64.3,True
+Punjab,SDG3_Health,1.61,1.57,0.94,78.3,77.1,79.0,77.1,False
+Punjab,SDG4_Education,8.82,8.46,0.91,70.0,64.0,75.0,64.0,False
+Punjab,SDG13_Climate,0.63,0.63,0.92,66.0,65.4,66.0,65.4,False
+Rajasthan,SDG3_Health,2.68,2.63,0.93,72.0,69.9,73.0,69.9,False
+Rajasthan,SDG4_Education,2.47,2.42,0.94,62.0,60.1,63.0,60.1,False
+Rajasthan,SDG13_Climate,0.14,0.14,0.92,62.0,61.9,62.0,61.9,True
+Sikkim,SDG3_Health,2.72,2.64,0.93,64.7,62.7,66.0,62.7,False
+Sikkim,SDG4_Education,5.58,5.37,0.97,64.0,60.1,67.0,60.1,False
+Sikkim,SDG13_Climate,3.01,3.01,0.92,81.0,78.0,81.0,78.0,False
+Tamil Nadu,SDG3_Health,2.18,2.08,0.81,78.3,79.7,77.0,79.7,True
+Tamil Nadu,SDG4_Education,4.3,4.15,0.96,73.7,70.7,76.0,70.7,False
+Tamil Nadu,SDG13_Climate,2.52,2.52,0.92,81.0,78.5,81.0,78.5,False
+Telangana,SDG3_Health,3.78,3.65,0.81,71.0,68.3,73.0,68.3,False
+Telangana,SDG4_Education,0.59,0.57,0.84,63.7,63.3,64.0,63.3,True
+Telangana,SDG13_Climate,0.49,0.49,0.92,59.0,59.5,59.0,59.5,True
+Tripura,SDG3_Health,7.84,7.58,0.96,75.0,69.4,79.0,69.4,False
+Tripura,SDG4_Education,5.36,5.1,0.84,48.7,45.3,52.0,45.3,True
+Tripura,SDG13_Climate,0.98,0.98,0.92,51.0,50.0,51.0,50.0,False
+Uttar Pradesh,SDG3_Health,2.46,2.46,0.93,60.7,58.4,61.0,58.4,False
+Uttar Pradesh,SDG4_Education,2.06,2.0,0.96,53.0,51.5,54.0,51.5,True
+Uttar Pradesh,SDG13_Climate,0.28,0.28,0.92,52.0,51.7,52.0,51.7,True
+Uttarakhand,SDG3_Health,5.66,5.55,0.93,81.7,77.3,84.0,77.3,False
+Uttarakhand,SDG4_Education,2.13,2.07,0.96,72.0,70.4,73.0,70.4,False
+Uttarakhand,SDG13_Climate,0.84,0.84,0.92,71.0,70.2,71.0,70.2,False
+West Bengal,SDG3_Health,2.27,2.21,0.95,78.0,76.3,79.0,76.3,False
+West Bengal,SDG4_Education,3.99,3.86,0.97,58.0,55.1,60.0,55.1,False
+West Bengal,SDG13_Climate,0.49,0.49,0.92,44.0,43.5,44.0,43.5,True
+Andaman and Nicobar Islands,SDG3_Health,1.67,1.62,0.97,69.2,68.0,70.0,68.0,True
+Andaman and Nicobar Islands,SDG4_Education,1.67,1.62,0.97,70.2,69.0,71.0,69.0,True
+Andaman and Nicobar Islands,SDG13_Climate,1.67,1.62,0.97,69.2,68.0,70.0,68.0,True
+Chandigarh,SDG3_Health,1.67,1.62,0.97,77.2,76.0,78.0,76.0,True
+Chandigarh,SDG4_Education,1.67,1.62,0.97,83.2,82.0,84.0,82.0,True
+Chandigarh,SDG13_Climate,1.67,1.62,0.97,63.2,62.0,64.0,62.0,True
+Dadra and Nagar Haveli and Daman and Diu,SDG3_Health,1.67,1.62,0.97,63.2,62.0,64.0,62.0,True
+Dadra and Nagar Haveli and Daman and Diu,SDG4_Education,1.67,1.62,0.97,62.2,61.0,63.0,61.0,True
+Dadra and Nagar Haveli and Daman and Diu,SDG13_Climate,1.67,1.62,0.97,55.2,54.0,56.0,54.0,True
+Delhi,SDG3_Health,1.67,1.62,0.97,74.2,73.0,75.0,73.0,True
+Delhi,SDG4_Education,1.67,1.62,0.97,79.2,78.0,80.0,78.0,True
+Delhi,SDG13_Climate,1.67,1.62,0.97,49.2,48.0,50.0,48.0,True
+Jammu and Kashmir,SDG3_Health,1.99,1.93,0.97,57.0,55.6,58.0,55.6,True
+Jammu and Kashmir,SDG4_Education,1.99,1.93,0.97,58.0,56.6,59.0,56.6,True
+Jammu and Kashmir,SDG13_Climate,1.67,1.62,0.97,58.2,57.0,59.0,57.0,True
+Ladakh,SDG3_Health,1.67,1.62,0.97,60.2,59.0,61.0,59.0,True
+Ladakh,SDG4_Education,1.67,1.62,0.97,59.2,58.0,60.0,58.0,True
+Ladakh,SDG13_Climate,1.67,1.62,0.97,61.2,60.0,62.0,60.0,True
+Lakshadweep,SDG3_Health,1.67,1.62,0.97,72.2,71.0,73.0,71.0,True
+Lakshadweep,SDG4_Education,1.67,1.62,0.97,71.2,70.0,72.0,70.0,True
+Lakshadweep,SDG13_Climate,1.67,1.62,0.97,67.2,66.0,68.0,66.0,True
+Puducherry,SDG3_Health,1.67,1.62,0.97,74.2,73.0,75.0,73.0,True
+Puducherry,SDG4_Education,1.67,1.62,0.97,74.2,73.0,75.0,73.0,True
+Puducherry,SDG13_Climate,1.67,1.62,0.97,60.2,59.0,61.0,59.0,True
+India,SDG3_Health,2.75,2.7,0.93,76.0,73.8,77.0,73.8,False
+India,SDG4_Education,2.44,2.36,0.95,59.7,58.0,61.0,58.0,True
+India,SDG13_Climate,0.49,0.49,0.92,67.0,66.5,67.0,66.5,True

@@ -64,7 +64,7 @@ def get_pipeline_cache():
         trained_models, val_df = train_and_validate_models()
         fore_df = generate_forecasts(trained_models)
         fore_enriched = enrich_with_risk_labels(fore_df, score_col="Forecast_Score")
-        timeseries_df, _, _ = get_complete_timeseries()
+        timeseries_df, _, _ = get_complete_timeseries(models=trained_models, df_fore=fore_df)
         early_warnings = get_early_warning_alerts(fore_enriched, hist_df)
         health_ind = load_health_indicators()
         clim_ind = load_climate_indicators()

@@ -761,8 +761,8 @@ with tab7:
         <div class="arch-card">
             <h4 style="color: #818CF8;">2. ML & Forecasting Layer</h4>
             <ul style="font-size: 13px; color: #CBD5E1; padding-left: 18px;">
-                <li><b>Modeling:</b> 108 independent Scikit-learn OLS Linear Regression models.</li>
-                <li><b>Projections:</b> Forward multi-year forecasts for <b>2024, 2025, 2026</b>.</li>
+                <li><b>Modeling:</b> 108 independent Scikit-learn Random Forest Regressor models (Ensemble Tree Architecture).</li>
+                <li><b>Projections:</b> Forward multi-year forecasts for <b>2024, 2025, 2026</b> with tree-variance 95% CIs.</li>
                 <li><b>Risk Profiling:</b> Automated 3-tier NITI Aayog classifier (<50, 50–74, ≥75).</li>
             </ul>
         </div>
@@ -893,7 +893,7 @@ with tab8:
 
     with exp_c3:
         st.markdown("#### 3. ML Model Validation Scorecard")
-        st.markdown("Holdout evaluation metrics (RMSE, MAE, R²) across all 108 state-level linear regression models.")
+        st.markdown("Holdout evaluation metrics (RMSE, MAE, R²) across all 108 state-level Random Forest Regressor models.")
         csv_val = val_df.to_csv(index=False).encode('utf-8')
         st.download_button(
             label="⬇️ Download Validation Metrics CSV",
