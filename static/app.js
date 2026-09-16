@@ -17,22 +17,60 @@ const state = {
   charts: {}
 };
 
-// Color Tokens
 const COLORS = {
-  sdg3: "#10B981",    // Emerald Green
-  sdg4: "#60A5FA",    // Blue
-  sdg13: "#F59E0B",   // Amber Yellow
-  composite: "#C084FC",// Purple
-  highRisk: "#EF4444",
-  medRisk: "#F59E0B",
-  lowRisk: "#10B981"
+  sdg3: "#4ade80",       /* Green  — SDG 3 Health   */
+  sdg4: "#facc15",       /* Yellow — SDG 4 Education */
+  sdg13: "#f87171",      /* Red    — SDG 13 Climate  */
+  composite: "#a78bfa",
+  highRisk: "#f87171",
+  medRisk: "#facc15",
+  lowRisk: "#4ade80",
+  accent: "#6b8fad",
+  grid: "rgba(232, 237, 242, 0.06)",
+  tick: "#9aa5b1",
+  legend: "#c5ced6",
+  tooltipBg: "#161b22",
+  tooltipTitle: "#e8edf2",
+  tooltipBody: "#9aa5b1"
 };
 
-// Initialize App
+const CHART_FONT = "Inter, Roboto, system-ui, sans-serif";
+
+function refreshIcons() {
+  if (window.lucide) lucide.createIcons();
+}
+
+function applyChartDefaults() {
+  if (!window.Chart) return;
+  Chart.defaults.font.family = CHART_FONT;
+  Chart.defaults.color = COLORS.tick;
+  Chart.defaults.borderColor = COLORS.grid;
+}
+
+function setupAboutModal() {
+  const modal = document.getElementById("aboutModal");
+  const openers = [document.getElementById("aboutOpenBtn"), document.getElementById("aboutOpenBtnFooter")];
+  const closer = document.getElementById("aboutCloseBtn");
+  const open = () => modal.classList.add("open");
+  const close = () => modal.classList.remove("open");
+  openers.forEach(btn => btn && btn.addEventListener("click", open));
+  if (closer) closer.addEventListener("click", close);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
+  applyChartDefaults();
+  setupAboutModal();
   setupTabs();
   setupGlobalControls();
+  refreshIcons();
   await loadDashboardData();
+  refreshIcons();
 });
 
 // Setup Navigation Tabs
@@ -329,16 +367,16 @@ function renderTrendChart() {
       plugins: {
         legend: {
           labels: {
-            color: "#CBD5E1",
-            font: { family: "Plus Jakarta Sans", size: 11, weight: "600" },
+            color: COLORS.legend,
+            font: { family: CHART_FONT, size: 11, weight: "500" },
             filter: item => !item.text.includes("CI Upper") && !item.text.includes("95% CI")
           }
         },
         tooltip: {
-          backgroundColor: "rgba(15, 23, 42, 0.9)",
-          titleColor: "#F8FAFC",
-          bodyColor: "#CBD5E1",
-          borderColor: "rgba(56, 189, 248, 0.3)",
+          backgroundColor: COLORS.tooltipBg,
+          titleColor: COLORS.tooltipTitle,
+          bodyColor: COLORS.tooltipBody,
+          borderColor: "rgba(107, 143, 173, 0.35)",
           borderWidth: 1,
           padding: 10,
           callbacks: {
@@ -351,15 +389,15 @@ function renderTrendChart() {
       },
       scales: {
         x: {
-          grid: { color: "rgba(255, 255, 255, 0.05)" },
-          ticks: { color: "#94A3B8", font: { family: "Plus Jakarta Sans", weight: "600" } }
+          grid: { color: COLORS.grid },
+          ticks: { color: COLORS.tick, font: { family: CHART_FONT, weight: "500" } }
         },
         y: {
           min: 20,
           max: 100,
-          grid: { color: "rgba(255, 255, 255, 0.05)" },
-          ticks: { color: "#94A3B8" },
-          title: { display: true, text: "SDG Index Score (0-100)", color: "#64748B" }
+          grid: { color: COLORS.grid },
+          ticks: { color: COLORS.tick },
+          title: { display: true, text: "SDG Index Score (0-100)", color: "#6b7580" }
         }
       }
     }
@@ -414,7 +452,7 @@ function renderGoalScorecards() {
       </div>
       <div class="stat-header" style="margin-top: 6px;">
         <span class="stat-score" style="color: ${borderColor};">${projVal.toFixed(1)}</span>
-        <span style="font-size: 11px; color: #94A3B8;">2023: <b>${currVal.toFixed(1)}</b> (${slopeInfo.slope >= 0 ? '+' : ''}${slopeInfo.slope.toFixed(2)}/yr)</span>
+        <span style="font-size: 11px; color: var(--text-muted);">2023: <b>${currVal.toFixed(1)}</b> (${slopeInfo.slope >= 0 ? '+' : ''}${slopeInfo.slope.toFixed(2)}/yr)</span>
       </div>
       <div class="stat-meta">
         <span>95% CI: [${ciLow.toFixed(1)} – ${ciHi.toFixed(1)}]</span>
@@ -482,11 +520,11 @@ function renderCompareChart() {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { labels: { color: "#CBD5E1", font: { family: "Plus Jakarta Sans", size: 11 } } }
+        legend: { labels: { color: COLORS.legend, font: { family: CHART_FONT, size: 11, weight: "500" } } }
       },
       scales: {
-        x: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94A3B8" } },
-        y: { min: 20, max: 100, grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94A3B8" } }
+        x: { grid: { color: COLORS.grid }, ticks: { color: COLORS.tick } },
+        y: { min: 20, max: 100, grid: { color: COLORS.grid }, ticks: { color: COLORS.tick } }
       }
     }
   });
@@ -498,7 +536,8 @@ function renderPriorityAlerts() {
   container.innerHTML = "";
 
   if (!state.data.early_warnings || state.data.early_warnings.length === 0) {
-    container.innerHTML = `<div style="color: var(--accent-green); font-size: 13px;">✅ No critical threshold drop alerts detected.</div>`;
+    container.innerHTML = `<div class="empty-state"><i data-lucide="circle-check" class="icon-sm"></i> No critical threshold drop alerts detected.</div>`;
+    refreshIcons();
     return;
   }
 
@@ -511,12 +550,12 @@ function renderPriorityAlerts() {
     card.innerHTML = `
       <div>
         <span class="badge ${badgeClass}">${alert.Severity}</span>
-        <b style="color: #F8FAFC; margin-left: 10px; font-size: 14px;">${alert.State} — ${alert.SDG}</b>
-        <div style="color: #CBD5E1; font-size: 13px; margin-top: 4px;">${alert.Description}</div>
+        <b style="color: var(--text-primary); margin-left: 10px; font-size: 14px;">${alert.State} — ${alert.SDG}</b>
+        <div style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">${alert.Description}</div>
       </div>
       <div style="text-align: right; min-width: 140px;">
-        <span style="font-size: 11px; color: #94A3B8;">2023 Baseline: <b>${alert['2023_Baseline'].toFixed(1)}</b></span><br>
-        <span style="font-size: 13px; font-weight: 700; color: #EF4444;">2026 Projected: <b>${alert['2026_Projected'].toFixed(1)}</b></span>
+        <span style="font-size: 11px; color: var(--text-muted);">2023 Baseline: <b>${alert['2023_Baseline'].toFixed(1)}</b></span><br>
+        <span style="font-size: 13px; font-weight: 600; color: var(--status-negative);">2026 Projected: <b>${alert['2026_Projected'].toFixed(1)}</b></span>
       </div>
     `;
     container.appendChild(card);
@@ -556,9 +595,9 @@ function renderRiskMatrixTable() {
       <td><b>${row.State}</b></td>
       <td>${sdgLabel}</td>
       <td>${baseVal.toFixed(1)}</td>
-      <td style="font-weight: 800; font-family: Outfit; font-size: 15px;">${row.Forecast_Score.toFixed(1)}</td>
-      <td style="color: #94A3B8;">[${row.CI_Lower_95.toFixed(1)} – ${row.CI_Upper_95.toFixed(1)}]</td>
-      <td style="color: ${row.Annual_Growth_Rate >= 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; font-weight: 700;">
+      <td style="font-weight: 600; font-size: 15px;">${row.Forecast_Score.toFixed(1)}</td>
+      <td style="color: var(--text-muted);">[${row.CI_Lower_95.toFixed(1)} – ${row.CI_Upper_95.toFixed(1)}]</td>
+      <td style="color: ${row.Annual_Growth_Rate >= 0 ? 'var(--status-positive)' : 'var(--status-negative)'}; font-weight: 600;">
         ${row.Annual_Growth_Rate >= 0 ? '+' : ''}${row.Annual_Growth_Rate.toFixed(2)}
       </td>
       <td><span class="badge ${badgeClass}">${row.NITI_Tier}</span></td>
@@ -620,8 +659,8 @@ function renderGeoAnalytics() {
     card.innerHTML = `
       <div style="font-weight: 700; font-size: 13px;">${item.state}</div>
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px;">
-        <span style="font-family: Outfit; font-size: 18px; font-weight: 800; color: ${col};">${item.score.toFixed(1)}</span>
-        <span style="font-size: 10px; color: #94A3B8;">${tier}</span>
+        <span style="font-size: 18px; font-weight: 600; color: ${col};">${item.score.toFixed(1)}</span>
+        <span style="font-size: 11px; color: var(--text-muted);">${tier}</span>
       </div>
     `;
     cardsGrid.appendChild(card);
@@ -632,14 +671,14 @@ function renderGeoAnalytics() {
     let col = (item.score >= 75) ? COLORS.lowRisk : ((item.score >= 50) ? COLORS.medRisk : COLORS.highRisk);
 
     const row = document.createElement("div");
-    row.style.marginBottom = "10px";
+    row.className = "leaderboard-row";
     row.innerHTML = `
-      <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 2px;">
+      <div class="leaderboard-meta">
         <span>#${idx + 1} ${item.state}</span>
-        <span style="color: ${col}; font-family: Outfit; font-weight: 800;">${item.score.toFixed(1)}</span>
+        <span style="color: ${col}; font-weight: 600;">${item.score.toFixed(1)}</span>
       </div>
-      <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden;">
-        <div style="width: ${Math.min(100, Math.max(0, item.score))}%; height: 100%; background: ${col}; border-radius: 3px; transition: width 0.5s ease;"></div>
+      <div class="leaderboard-bar">
+        <div class="leaderboard-fill" style="width: ${Math.min(100, Math.max(0, item.score))}%; background: ${col};"></div>
       </div>
     `;
     leaderboard.appendChild(row);
@@ -664,8 +703,8 @@ function renderClimateCharts() {
       datasets: [{
         label: "Annual Decarbonization Pace (pts/year)",
         data: topStates.map(d => d.Annual_Growth_Rate),
-        backgroundColor: topStates.map(d => d.Annual_Growth_Rate >= 0 ? "rgba(16, 185, 129, 0.7)" : "rgba(239, 68, 68, 0.7)"),
-        borderColor: topStates.map(d => d.Annual_Growth_Rate >= 0 ? COLORS.accent_green : COLORS.accent_red),
+        backgroundColor: topStates.map(d => d.Annual_Growth_Rate >= 0 ? "rgba(138, 168, 154, 0.72)" : "rgba(176, 137, 137, 0.72)"),
+        borderColor: topStates.map(d => d.Annual_Growth_Rate >= 0 ? COLORS.lowRisk : COLORS.highRisk),
         borderWidth: 1,
         borderRadius: 4
       }]
@@ -673,10 +712,10 @@ function renderClimateCharts() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: "#CBD5E1" } } },
+      plugins: { legend: { labels: { color: COLORS.legend, font: { family: CHART_FONT, size: 11 } } } },
       scales: {
-        x: { ticks: { color: "#94A3B8", font: { size: 10 } }, grid: { color: "rgba(255,255,255,0.05)" } },
-        y: { ticks: { color: "#94A3B8" }, grid: { color: "rgba(255,255,255,0.05)" } }
+        x: { ticks: { color: COLORS.tick, font: { size: 10 } }, grid: { color: COLORS.grid } },
+        y: { ticks: { color: COLORS.tick }, grid: { color: COLORS.grid } }
       }
     }
   });
@@ -699,8 +738,8 @@ function renderClimateCharts() {
         datasets: [{
           label: "Renewable Energy Share (%)",
           data: sortedClim.map(d => d[renCol]),
-          backgroundColor: "rgba(56, 189, 248, 0.6)",
-          borderColor: "#38BDF8",
+          backgroundColor: "rgba(123, 163, 201, 0.65)",
+          borderColor: COLORS.sdg4,
           borderWidth: 1,
           borderRadius: 4
         }]
@@ -708,10 +747,10 @@ function renderClimateCharts() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: "#CBD5E1" } } },
+        plugins: { legend: { labels: { color: COLORS.legend, font: { family: CHART_FONT, size: 11 } } } },
         scales: {
-          x: { ticks: { color: "#94A3B8", font: { size: 10 } }, grid: { color: "rgba(255,255,255,0.05)" } },
-          y: { max: 100, ticks: { color: "#94A3B8" }, grid: { color: "rgba(255,255,255,0.05)" } }
+          x: { ticks: { color: COLORS.tick, font: { size: 10 } }, grid: { color: COLORS.grid } },
+          y: { max: 100, ticks: { color: COLORS.tick }, grid: { color: COLORS.grid } }
         }
       }
     });
@@ -741,7 +780,7 @@ function renderHealthIndicators() {
       <td>${typeof fp === 'number' ? fp.toFixed(1) + '%' : fp}</td>
       <td>${typeof doc === 'number' ? doc.toFixed(1) : doc}</td>
       <td>${typeof imm === 'number' ? imm.toFixed(1) + '%' : imm}</td>
-      <td style="font-weight: 700; color: ${typeof mmr === 'number' && mmr > 100 ? 'var(--accent-red)' : 'var(--accent-green)'};">
+      <td style="font-weight: 600; color: ${typeof mmr === 'number' && mmr > 100 ? 'var(--status-negative)' : 'var(--status-positive)'};">
         ${typeof mmr === 'number' ? mmr.toFixed(0) : mmr}
       </td>
     `;
@@ -768,7 +807,7 @@ function renderHealthChart() {
       datasets: [{
         label: state.healthIndicator,
         data: validRows.map(d => d[state.healthIndicator]),
-        backgroundColor: "rgba(16, 185, 129, 0.6)",
+        backgroundColor: "rgba(143, 184, 168, 0.65)",
         borderColor: COLORS.sdg3,
         borderWidth: 1,
         borderRadius: 4
@@ -777,10 +816,10 @@ function renderHealthChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: "#CBD5E1" } } },
+      plugins: { legend: { labels: { color: COLORS.legend, font: { family: CHART_FONT, size: 11 } } } },
       scales: {
-        x: { ticks: { color: "#94A3B8", font: { size: 10 } }, grid: { color: "rgba(255,255,255,0.05)" } },
-        y: { ticks: { color: "#94A3B8" }, grid: { color: "rgba(255,255,255,0.05)" } }
+        x: { ticks: { color: COLORS.tick, font: { size: 10 } }, grid: { color: COLORS.grid } },
+        y: { ticks: { color: COLORS.tick }, grid: { color: COLORS.grid } }
       }
     }
   });
@@ -798,11 +837,11 @@ async function loadPolicyAdvisory() {
     const advisory = await res.json();
 
     summaryEl.innerHTML = `
-      <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 18px 24px;">
-        <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">📌 Executive Governance Brief for State Leadership</h4>
-        <p style="color: #CBD5E1; font-size: 14px;">
-          Empirical projections indicate that <b>${state.selectedState}</b> requires the most critical developmental acceleration in 
-          <span style="color: #F87171; font-weight: 700;">${advisory.priority_sdg}</span>.
+      <div class="policy-brief">
+        <h4 style="color: var(--text-primary); margin-bottom: 8px; font-weight: 600;">Executive governance brief for state leadership</h4>
+        <p style="color: var(--text-secondary); font-size: 14px;">
+          Empirical projections indicate that <b>${state.selectedState}</b> requires the most critical developmental acceleration in
+          <span style="color: var(--status-negative); font-weight: 600;">${advisory.priority_sdg}</span>.
           Fast-tracking targeted resource allocation and scheme enforcement will mitigate risk of target slippage by 2026.
         </p>
       </div>
@@ -813,7 +852,7 @@ async function loadPolicyAdvisory() {
       const box = document.createElement("div");
       box.className = "policy-item";
 
-      let urgColor = (rec.urgency.includes("CRITICAL")) ? "var(--accent-red)" : ((rec.urgency.includes("ACCELERATION")) ? "var(--accent-amber)" : "var(--accent-green)");
+      let urgColor = (rec.urgency.includes("CRITICAL")) ? "var(--status-negative)" : ((rec.urgency.includes("ACCELERATION")) ? "var(--status-caution)" : "var(--status-positive)");
       box.style.borderLeftColor = urgColor;
 
       box.innerHTML = `
@@ -821,11 +860,11 @@ async function loadPolicyAdvisory() {
           <span>${rec.sdg_title}</span>
           <span class="badge" style="background: rgba(255,255,255,0.05); color: ${urgColor}; border: 1px solid ${urgColor};">${rec.urgency}</span>
         </h4>
-        <div style="font-size: 12px; color: #94A3B8; margin: 6px 0 10px 0;">
-          2023 Current: <b>${rec['2023_score'].toFixed(1)}</b> ➔ 2026 Projected: <b>${rec['2026_proj'].toFixed(1)}</b> (Velocity: ${rec.annual_velocity >= 0 ? '+' : ''}${rec.annual_velocity.toFixed(2)} pts/yr)
+        <div style="font-size: 12px; color: var(--text-muted); margin: 6px 0 10px 0;">
+          2023 Current: <b>${rec['2023_score'].toFixed(1)}</b> → 2026 Projected: <b>${rec['2026_proj'].toFixed(1)}</b> (Velocity: ${rec.annual_velocity >= 0 ? '+' : ''}${rec.annual_velocity.toFixed(2)} pts/yr)
         </div>
         <div>
-          <b style="font-size: 13px; color: #F8FAFC;">Recommended Priority Interventions:</b>
+          <b style="font-size: 13px; color: var(--text-primary);">Recommended priority interventions:</b>
           <ul>
             ${rec.action_items.map(act => `<li>${act}</li>`).join('')}
           </ul>
@@ -845,14 +884,15 @@ async function loadPolicyAdvisory() {
 
       let html = `<div style="font-size: 13px; line-height: 1.8;">`;
       Object.keys(grouped).forEach(k => {
-        html += `<div style="margin-bottom: 8px;"><b>${state.data.sdg_labels[k]}:</b> <span style="color: var(--accent-red);">${grouped[k].join(', ')}</span></div>`;
+        html += `<div style="margin-bottom: 8px;"><b>${state.data.sdg_labels[k]}:</b> <span style="color: var(--status-negative);">${grouped[k].join(', ')}</span></div>`;
       });
       html += `</div>`;
       natContainer.innerHTML = html;
     } else {
-      natContainer.innerHTML = `<div style="color: var(--accent-green);">✅ No states projected in Aspirant tier (<50) by 2026.</div>`;
+      natContainer.innerHTML = `<div class="empty-state"><i data-lucide="circle-check" class="icon-sm"></i> No states projected in Aspirant tier (&lt;50) by 2026.</div>`;
     }
 
+    refreshIcons();
   } catch (err) {
     console.error("Error loading policy:", err);
   }
@@ -867,15 +907,15 @@ function renderValidationSection() {
 
   state.data.validation_summary.forEach(summary => {
     let col = (summary.SDG === "SDG3_Health") ? COLORS.sdg3 : ((summary.SDG === "SDG4_Education") ? COLORS.sdg4 : COLORS.sdg13);
-    let title = (summary.SDG === "SDG3_Health") ? "🏥 SDG 3 (Health)" : ((summary.SDG === "SDG4_Education") ? "📚 SDG 4 (Education)" : "🌿 SDG 13 (Climate)");
+    let title = (summary.SDG === "SDG3_Health") ? "SDG 3 (Health)" : ((summary.SDG === "SDG4_Education") ? "SDG 4 (Education)" : "SDG 13 (Climate)");
 
     const card = document.createElement("div");
     card.className = "glass-panel kpi-card";
     card.innerHTML = `
       <div class="kpi-title">${title} Holdout R²</div>
       <div class="kpi-value" style="color: ${col};">${summary.mean_r2.toFixed(2)}</div>
-      <div class="kpi-delta pos">Mean Holdout RMSE: <b>${summary.mean_rmse.toFixed(2)}</b> pts</div>
-      <div style="font-size: 11px; color: #94A3B8; margin-top: 4px;">Naive Baseline Beaten: <b>${summary.naive_beaten_pct}%</b> of states</div>
+      <div class="kpi-delta pos">Mean holdout RMSE: <b>${summary.mean_rmse.toFixed(2)}</b> pts</div>
+      <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Naive baseline beaten: <b>${summary.naive_beaten_pct}%</b> of states</div>
     `;
     kpisGrid.appendChild(card);
   });
@@ -891,8 +931,8 @@ function renderValidationSection() {
       <td>${row.Holdout_Pred_2023.toFixed(1)}</td>
       <td style="font-weight: 700;">${row.RMSE.toFixed(2)}</td>
       <td>${row.MAE.toFixed(2)}</td>
-      <td style="font-weight: 700; color: var(--accent-cyan);">${row.R2.toFixed(2)}</td>
-      <td><span class="badge ${row.Naive_Beaten ? 'badge-low' : 'badge-med'}">${row.Naive_Beaten ? '✅ Yes' : '⚠️ Equal'}</span></td>
+      <td style="font-weight: 600; color: var(--accent);">${row.R2.toFixed(2)}</td>
+      <td><span class="badge ${row.Naive_Beaten ? 'badge-low' : 'badge-med'}">${row.Naive_Beaten ? 'Yes' : 'Equal'}</span></td>
     `;
     tbody.appendChild(tr);
   });
